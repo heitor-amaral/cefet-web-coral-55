@@ -99,6 +99,10 @@ html, body, #recipiente {
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
+  
+  line-height: 40px;
 }
 
 
