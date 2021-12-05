@@ -4,6 +4,10 @@
 @import "fonts/verdana.css";
 @import "fonts/ravie.css";
 
+:root {
+  --cor-do-texto: #333;
+}
+
 
 body {
   background-color: #fff;
@@ -24,17 +28,19 @@ strong {
   border-top: 1px solid #aac0ae;
   border-bottom: 1px solid #aac0ae;
   border-left: 1px solid #aac0ae;
+
+  padding: 0 20px
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-do-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-do-texto);
 }
 
 
@@ -92,7 +98,7 @@ html, body, #recipiente {
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-do-texto);
   font-weight: normal;
   text-align: right;
 }
@@ -101,33 +107,52 @@ html, body, #recipiente {
 article {
   display: flex;
   justify-content: space-between;
-  
+
   line-height: 40px;
 }
 
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  
+  padding-bottom: 25px;
+  padding-top: 40px;
+  padding-right: 15px;
 }
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  position: absolute;
+  top: 50%;
+  left: -89px;
+  transition: left 300ms ease-out;
 }
 
 #ticket:hover {
+  left: 0;
 }
 
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
 }
 
 #peixe {
+  position: relative;
+  left: -44px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
@@ -140,3 +165,23 @@ article {
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-do-texto: #eee;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  #recipiente {
+    background-image: linear-gradient(to bottom, #063f5b, #0f0020 80%);
+  }
+
+  #cardapio {
+    background-color: rgba(	0, 0, 0, 0.137);
+    border-top: 1px solid #595959;
+    border-bottom: 1px solid #595959;
+    border-left: 1px solid #595959;
+  }
+}
